@@ -20,6 +20,7 @@
   <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">License</a>
 </p>
+
 ## 👨🏻‍💻 About the project
 
 ### Authors
