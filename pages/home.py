@@ -4,7 +4,7 @@ from model.mltext import classifyText, storeText
 from model.mlmodel import trainModel, checkModel
 from decouple import config
 
-API_KEY = config('SECRET_KEY')
+API_KEY = config('API_KEY')
 
 def write():
     """Used to write the page in the app.py file"""

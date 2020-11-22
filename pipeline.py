@@ -1,21 +1,27 @@
+import os
+
+from decouple import config
+
+from model.data_prep import prepare_data
+from model.train_model import train_model
+from model.test_model import test_model
+
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 from crawler.spiders.lyrics import LyricsSpider
 
-import os
-from model.data_prep import prepare_data
-from model.train_model import train_model
-from model.test_model import test_model
-from decouple import config
-
-API_KEY = config('SECRET_KEY')
+API_KEY = config('API_KEY')
 
 print('----------------------------')
 print('     COLLECTING THE DATA    ')
 print('----------------------------')
-process = CrawlerProcess(get_project_settings())
-process.crawl(LyricsSpider)
-process.start()
+
+if not os.path.exists('data/raw_data.csv'):
+    process = CrawlerProcess(get_project_settings())
+    process.crawl(LyricsSpider)
+    process.start()
+else:
+    print('\033[33m'+"WARNING: There is already data saved in the directory, if you want to collect new ones delete the raw_data.csv file in the data folder."+'\033[0;0m')
 
 print('----------------------------')
 print('     TRAINING THE MODEL     ')
