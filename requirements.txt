@@ -1,0 +1,11 @@
+urllib3==1.24.2
+streamlit==0.60.0
+awesome-streamlit==20200728.1
+Scrapy==2.3.0
+pandas==1.0.3
+numpy==1.18.2
+mlxtend==0.17.3
+scikit-learn==0.22.2.post1
+matplotlib==3.2.1
+python-decouple==3.3
+requests==2.23.0
